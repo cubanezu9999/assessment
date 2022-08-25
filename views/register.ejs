@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Register</title>
+
+    <style>
+        input[type=text] {
+            height: 25px;
+            border: 3px red;
+            border-radius: 10px;
+        }
+        
+        input[type=password] {
+            height: 25px;
+            border: 3px red;
+            border-radius: 10px;
+        }
+        
+        input[type=email] {
+            height: 25px;
+            border: 3px red;
+            border-radius: 10px;
+        }
+        
+        input[type=submit] {
+            font-size: 25px;
+            border-radius: 10px;
+            color: rgb(75, 77, 27);
+            background-color: rgb(190, 190, 240);
+        }
+        
+        input[type=submit]:hover {
+            background-color: rgb(235, 178, 178);
+            color: red;
+        }
+        
+        label {
+            font-size: 25px;
+            color: rgb(75, 27, 27);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a class="active" href="/register">Register</a>
+        <a href="/songs">Songs</a>
+        <a href="/view-basket">View Basket</a>
+        <a href="/account">Account</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+    <br><br><br>
+    <div class="container">
+        <form action="/register" method="POST">
+            <label for="fn">First Name</label><br>
+            <input type="text" id="fn" name="firstname" placeholder="Your name...(Letters only)" size="75" pattern="[a-zA-Z]+" required><br>
+            <label for="ln">Last Name</label><br>
+            <input type="text" id="ln" name="lastname" placeholder="Your last name...(Letters only)" size="75" pattern="[a-zA-Z]+" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="user@domain..." size="75" required><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password1" name="password1" size="75" required><br>
+            <label for="reenter">Re-enter Password</label><br>
+            <input type="password" name="password2" id="password2" size="75" required><br><br>
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>

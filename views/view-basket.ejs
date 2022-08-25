@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View-Basket</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+        
+        input:read-only {
+            border: 0;
+            width: inherit;
+            display: block;
+            margin: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/songs">Songs</a>
+        <a class="active" href="/view-basket">View Basket</a>
+        <a href="/account">Account</a>
+        <a href="/logout">Logout</a>
+
+
+    </div>
+    <br><br>
+    <div class="container">
+        <table style="width: 47%">
+            <% data.forEach(function(item,index) { %>
+                <tr>
+                    <form action="/remove-from-basket" method="POST">
+                        <td><input name="index" value='<%=index+1 %>' size="1" readonly="readonly">
+                        </td>
+
+                        <td><input name="index" value='<%=item.index %>' size="1" readonly="readonly">
+                        </td>
+                        <td><input name="artist" value='<%=item.artist %>' readonly="readonly" size="30">
+                        </td>
+                        <td><input name="title" value='<%=item.title %>' readonly="readonly" size="50">
+                        </td>
+                        <td>
+                            <input type="submit" action="Submit" value="Remove">
+                        </td>
+
+                    </form>
+
+
+                </tr>
+
+                <% }) %>
+        </table>
+        <h3>Total
+            <%=data.length%>&nbsp;songs to checkout.
+        </h3>
+    </div>
+    <div class="container1">
+        <a href="/songs"><button class="view-basket">Add more</button></a>&emsp;&emsp;
+
+        <form action="/checkout" method="POST"><a href="/checkout"><button class="view-basket">Checkout</button><a></form>
+    </div>
+</body>
+
+</html>

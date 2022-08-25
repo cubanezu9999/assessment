@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+        
+        input:read-only {
+            border: 0;
+            width: inherit;
+            display: block;
+            margin: 0.5px;
+        }
+        
+        .view-basket {
+            margin-left: 45%;
+            font-size: 27px;
+            background-color: rgb(190, 190, 240);
+            border-radius: 10px;
+            color: rgb(75, 77, 27)
+        }
+        
+        .view-basket:hover {
+            background-color: rgb(235, 178, 178);
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a class="active" href="/songs">Songs</a>
+        <a href="/view-basket">View Basket</a>
+        <a href="/account">Account</a>
+        <a href="/logout">Logout</a>
+
+
+    </div>
+    <br><br>
+    <a href="/view-basket"><button class="view-basket">View Basket</button></a>
+    <br>
+    <div class="container">
+        <table style="width: 47%">
+            <% data1.forEach(function(item,index) { %>
+                <tr>
+                    <form action="/basket" method="POST">
+                        <td name="index"><input name="index" value='<%=index +1 %>' size="1" readonly="readonly">
+                        </td>
+                        <td><input name="artist" value='<%=item.artist %>' readonly="readonly" size="30">
+                        </td>
+                        <td><input name="title" value='<%=item.title %>' readonly="readonly" size="50">
+                        </td>
+                        <td>
+                            <input type="submit" action="Submit" value="Add To Basket">
+                        </td>
+                    </form>
+
+
+                </tr>
+                <% }) %>
+        </table>
+    </div><br>
+    <a href="#top"><button class="view-basket">Back to Top</button></a>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Song</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+        
+        input:read-only {
+            border: 0;
+            width: inherit;
+            display: block;
+            margin: 0.5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/songs">Songs</a>
+        <a href="/view-basket">View Basket</a>
+        <a href="/account">Account</a>
+        <a href="/logout">Logout</a>
+
+    </div>
+    <div class="container">
+        <br><br>
+        <h1>Welcome to Favorite Song</h1>
+        <br><br>
+        <h2>Here its a sample of what we have in store:</h2>
+        <table style="width: 47%">
+            <% data.forEach(function(item,index) { %>
+                <tr>
+
+                    <td>
+                        <%=index +1 %>
+                    </td>
+                    <td>
+                        <%=item.artist %>
+                    </td>
+                    <td>
+                        <%=item.title %>
+                    </td>
+
+
+
+
+                </tr>
+                <% }) %>
+        </table><br><br>
+
+        <a href="/login"><button class="view-basket">Login</button></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="/register"><button class="view-basket">Register</button></a>&nbsp;&nbsp;&nbsp;
+
+        <a href="/logout"><button class="view-basket">Logout</button></a>
+    </div>
+</body>
+
+</html>
