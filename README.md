@@ -18,6 +18,6 @@ On the hosted app that its on Heroku ,alerts does not work for some reason I don
 
 ## Final Thoughts:
 
-This project its an assessment for my courses I do and must be a proof that I k now how to design ,build, and maintain a express app with mongo db.
+This project its an assessment for my courses  and must be a proof that i know how to design ,build, and maintain an express app with mongo db.
 ## Link to hosted app on Heroku:
 https://mongo-database-web-app-proof.herokuapp.com/
